@@ -45,7 +45,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 87.0, 181.0, 41.0, 22.0 ],
+					"patching_rect" : [ 89.0, 181.0, 41.0, 22.0 ],
 					"text" : "set $1"
 				}
 
@@ -57,7 +57,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 147.0, 181.0, 41.0, 22.0 ],
+					"patching_rect" : [ 150.666666666666686, 181.0, 41.0, 22.0 ],
 					"text" : "set $1"
 				}
 
@@ -69,7 +69,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 207.0, 181.0, 41.0, 22.0 ],
+					"patching_rect" : [ 212.5, 181.0, 41.0, 22.0 ],
 					"text" : "set $1"
 				}
 
@@ -81,7 +81,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 267.0, 181.0, 41.0, 22.0 ],
+					"patching_rect" : [ 274.333333333333371, 181.0, 41.0, 22.0 ],
 					"text" : "set $1"
 				}
 
@@ -93,7 +93,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 327.0, 181.0, 41.0, 22.0 ],
+					"patching_rect" : [ 336.166666666666686, 181.0, 41.0, 22.0 ],
 					"text" : "set $1"
 				}
 
@@ -105,7 +105,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 327.0, 377.0, 93.0, 22.0 ],
+					"patching_rect" : [ 336.166666666666686, 377.0, 93.0, 22.0 ],
 					"text" : "/layer/0/level $1"
 				}
 
@@ -117,8 +117,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 87.0, 377.0, 99.0, 22.0 ],
-					"text" : "/layer/0/active $1"
+					"patching_rect" : [ 89.0, 377.0, 111.0, 22.0 ],
+					"text" : "/layer/0/enabled $1"
 				}
 
 			}
@@ -129,7 +129,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 231.000000000000028, 416.0, 199.0, 22.0 ],
+					"patching_rect" : [ 233.000000000000028, 416.0, 199.0, 22.0 ],
 					"text" : "loadmess /global get-current-values"
 				}
 
@@ -140,7 +140,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 87.0, 416.0, 142.0, 22.0 ],
+					"patching_rect" : [ 89.0, 416.0, 142.0, 22.0 ],
 					"text" : "udpsend localhost 57121"
 				}
 
@@ -154,7 +154,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 207.0, 220.0, 24.0, 140.0 ],
+					"patching_rect" : [ 212.5, 220.0, 24.0, 140.0 ],
 					"setstyle" : 1
 				}
 
@@ -168,7 +168,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 267.0, 220.0, 24.0, 140.0 ],
+					"patching_rect" : [ 274.333333333333371, 220.0, 24.0, 140.0 ],
 					"setstyle" : 1
 				}
 
@@ -182,7 +182,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 327.0, 220.0, 24.0, 140.0 ],
+					"patching_rect" : [ 336.166666666666686, 220.0, 24.0, 140.0 ],
 					"setminmax" : [ 0.0, 1.0 ],
 					"setstyle" : 1
 				}
@@ -197,7 +197,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 147.0, 220.0, 24.0, 140.0 ],
+					"patching_rect" : [ 150.666666666666686, 220.0, 24.0, 140.0 ],
 					"setstyle" : 1
 				}
 
@@ -210,7 +210,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 87.0, 220.0, 24.0, 24.0 ]
+					"patching_rect" : [ 89.0, 220.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -233,8 +233,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 7,
 					"outlettype" : [ "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 27.0, 142.0, 379.0, 22.0 ],
-					"text" : "OSC-route /connected /active /pitchmod /tempomod /speedmod /level"
+					"patching_rect" : [ 27.0, 142.0, 390.0, 22.0 ],
+					"text" : "OSC-route /connected /enabled /pitchmod /tempomod /speedmod /level"
 				}
 
 			}

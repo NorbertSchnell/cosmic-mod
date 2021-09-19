@@ -117,8 +117,8 @@ class ControllerExperience extends AbstractExperience {
           const state = this.layers[index].state;
 
           switch (paramName) {
-            case 'active':
-              state.set({ active: (args[0] !== 0) });
+            case 'enabled':
+              state.set({ enabled: (args[0] !== 0) });
               break;
             case 'level':
               state.set({ 'level': args[0] });
@@ -186,8 +186,8 @@ class ControllerExperience extends AbstractExperience {
         case 'connected':
           this.osc.send(`/layer/${index}/connected`, updates.connected + 0);
           break;
-        case 'active':
-          this.osc.send(`/layer/${index}/active`, updates.active + 0);
+        case 'enabled':
+          this.osc.send(`/layer/${index}/enabled`, updates.enabled + 0);
           break;
         case 'pitchmod':
           this.osc.send(`/layer/${index}/pitchmod`, updates.pitchmod);

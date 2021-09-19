@@ -8,7 +8,7 @@ export default {
     type: 'boolean',
     default: false,
   },
-  active: {
+  enabled: {
     type: 'boolean',
     default: true,
   },

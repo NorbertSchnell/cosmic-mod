@@ -197,8 +197,8 @@ class PlayerExperience extends AbstractExperience {
   updateLayer(updates = this.layerState.getValues()) {
     const state = this.layerState;
 
-    if (updates.active !== undefined) {
-      if (updates.active) {
+    if (updates.enabled !== undefined) {
+      if (updates.enabled) {
         this.overlayElem.classList.add('hidden');
       } else {
         this.overlayElem.classList.remove('hidden');
@@ -207,10 +207,10 @@ class PlayerExperience extends AbstractExperience {
     }
   }
 
-  toggleActive() {
+  toggleEnabled() {
     const state = this.layerState;
-    const toggled = !state.get('active');
-    state.set({ active: toggled });
+    const toggled = !state.get('enabled');
+    state.set({ enabled: toggled });
   }
 
   resetValues() {
@@ -223,9 +223,9 @@ class PlayerExperience extends AbstractExperience {
 
   updateValues() {
     const state = this.layerState;
-    const active = state.get('active');
+    const enabled = state.get('enabled');
 
-    if (active) {
+    if (enabled) {
       const time = performance.now();
       const updates = {};
 
@@ -427,8 +427,8 @@ class PlayerExperience extends AbstractExperience {
     // beta tilt
     const level = state.get('level');
     if (level >= 0) {
-      const active = state.get('active');
-      ctx.fillStyle = (this.enableBeta && active) ? '#bbb' : '#777';
+      const enabled = state.get('enabled');
+      ctx.fillStyle = (this.enableBeta && enabled) ? '#bbb' : '#777';
       ctx.fillRect(this.centerX - margin, height, 2 * margin, -height * level);
     }
 

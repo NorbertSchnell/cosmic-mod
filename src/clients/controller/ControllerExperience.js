@@ -46,15 +46,15 @@ class ControllerExperience extends AbstractExperience {
 
   renderController() {
     render(html`
-      <button class="controller-button" @click="${(e) => this.activateAll(true)}">activate all</button>
-      <button class="controller-button" @click="${(e) => this.activateAll(false)}">desactivate all</button>
+      <button class="controller-button" @click="${(e) => this.activateAll(true)}">enable all</button>
+      <button class="controller-button" @click="${(e) => this.activateAll(false)}">disable all</button>
     `, this.controllerContainer);
   }
 
   activateAll(value) {
     for (let layer of this.layers) {
-      this.setActive(layer, value);
-      layer.state.set({ active: value });
+      this.setEnabled(layer, value);
+      layer.state.set({ enabled: value });
     }
   }
 
@@ -68,9 +68,9 @@ class ControllerExperience extends AbstractExperience {
         <div id=${frameId} class="layer-frame">
           <div class="layer-label">
             Layer ${i + 1}
-            <div class="layer-active" @click="${(e) => this.toggleActive(i)}"></div>
+            <div class="layer-enabled" @click="${(e) => this.toggleEnabled(i)}"></div>
           </div>
-          <div class="layer-box" @click="${(e) => this.toggleActive(i)}">
+          <div class="layer-box" @click="${(e) => this.toggleEnabled(i)}">
             <div class="layer-parameter">pitchmod: <span class="layer-parameter-value layer-left-slider-value">–</span></div>
             <div class="layer-parameter">tempomod: <span class="layer-parameter-value layer-right-slider-value">–</span></div>
             <div class="layer-parameter">speedmod: <span class="layer-parameter-value layer-gamma-tilt-value">–</span></div>
@@ -91,7 +91,7 @@ class ControllerExperience extends AbstractExperience {
       state,
       frameElem,
       labelElem: frameElem.querySelector(".layer-label"),
-      activeElem: frameElem.querySelector(".layer-active"),
+      enabledElem: frameElem.querySelector(".layer-enabled"),
       boxElem: frameElem.querySelector(".layer-box"),
       leftSliderElem: frameElem.querySelector(".layer-parameter-value.layer-left-slider-value"),
       rightSliderElem: frameElem.querySelector(".layer-parameter-value.layer-right-slider-value"),
@@ -109,23 +109,23 @@ class ControllerExperience extends AbstractExperience {
       layer.labelElem.classList.remove('connected');
     }
 
-    const active = layer.state.get('active');
-    this.setActive(layer, active);
+    const enabled = layer.state.get('enabled');
+    this.setEnabled(layer, enabled);
   }
 
-  setActive(layer, active) {
+  setEnabled(layer, enabled) {
     const connected = layer.state.get('connected');
 
-    if (active) {
-      layer.activeElem.innerHTML = '&times;';
+    if (enabled) {
+      layer.enabledElem.innerHTML = '&times;';
     } else {
-      layer.activeElem.innerHTML = '';
+      layer.enabledElem.innerHTML = '';
     }
 
-    if (active && connected) {
-      layer.boxElem.classList.add('active');
+    if (enabled && connected) {
+      layer.boxElem.classList.add('enabled');
     } else {
-      layer.boxElem.classList.remove('active');
+      layer.boxElem.classList.remove('enabled');
     }
   }
 
@@ -140,8 +140,8 @@ class ControllerExperience extends AbstractExperience {
           this.setConnected(layer, updates.connected);
           break;
 
-        case 'active':
-          this.setActive(layer, updates.active);
+        case 'enabled':
+          this.setEnabled(layer, updates.enabled);
           break;
 
         case 'pitchmod':
@@ -163,10 +163,10 @@ class ControllerExperience extends AbstractExperience {
     }
   }
 
-  toggleActive(layerIndex) {
+  toggleEnabled(layerIndex) {
     const layer = this.layers[layerIndex];
-    const active = !layer.state.get('active');
-    layer.state.set({ active });
+    const enabled = !layer.state.get('enabled');
+    layer.state.set({ enabled });
   }
 }
 

@@ -152,7 +152,7 @@ body.player {
   opacity: 1;
 }
 
-.layer-active {
+.layer-enabled {
   position: absolute;
   right: 10.5px;
   top: 14px;
@@ -165,7 +165,7 @@ body.player {
   opacity: 1;
 }
 
-.layer-active.active {
+.layer-enabled.enabled {
   opacity: 0;
 }
 
@@ -179,6 +179,6 @@ body.player {
   opacity: 0.5;
 }
 
-.layer-box.active {
+.layer-box.enabled {
   opacity: 1;
 }
